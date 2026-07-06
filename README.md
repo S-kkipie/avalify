@@ -21,6 +21,10 @@ Every trust agent on the market solves one slice — one scores before, one audi
 
 🚧 Early — hackathon build in progress (deadline 2026-07-12). Design and CAP integration landing next.
 
+## Docs
+
+Design, research, and decision context live in [`docs/`](docs/README.md): [overview](docs/00-overview.md) · [hackathon facts](docs/01-hackathon.md) · [landscape & winners](docs/02-landscape-and-winners.md) · [strategy](docs/03-strategy.md) · [naming](docs/04-naming-decision.md) · [open questions & scope](docs/05-open-questions.md).
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
