@@ -166,16 +166,16 @@ export interface Verifier { verify(delivery: Delivery, job: JobSpec): Verdict; }
 export function rank(cands: Candidate[], sigs: Map<string, ReputationSignal>, job: JobSpec): RankedCandidate[];
 ```
 
-**Ranking (the differentiator).** A transparent weighted score, not a black box:
+**Ranking (the differentiator).** Hiring is **trust-first**: the reputation term dominates; price and SLA only break ties among trusted candidates. A transparent weighted score, not a black box:
 
 ```
-score = w1·reputation(completionRate, 1−rejectRate, avalScore, merit?)
-      + w2·priceFit(priceUsdc vs job budget)
-      + w3·slaFit(latencyRatio)
+score = w1·TRUST(completionRate, 1−rejectRate, avalScore, merit?)   // w1 dominant — trust decides
+      + w2·priceFit(priceUsdc vs job budget)                        // tie-breaker only
+      + w3·slaFit(latencyRatio)                                     // tie-breaker only
       − penalties(denylisted, priceUsdc > maxPriceUsdc, sampleSize too small)
 ```
 
-`reasons[]` records each term so the aval can explain the pick. Weights live in one config object.
+Default weights make `w1 ≫ w2, w3` so a cheaper-but-less-trusted provider never outranks a trusted one within budget. **Trust is not a single native score** (no read API — §0); Avalify *composes* it from multiple observable signals + its own aval history, which is the core value over a read-only score API. `reasons[]` records each term so the aval can explain the pick. Weights live in one config object.
 
 ---
 
