@@ -1,0 +1,18 @@
+[
+  {
+    "capability": "dataset-summary",
+    "serviceId": "REPLACE_WITH_GOOD_PROVIDER_SERVICE_ID",
+    "agentId": "REPLACE_WITH_GOOD_PROVIDER_AGENT_ID",
+    "priceUsdc": 0.5,
+    "slaSeconds": 120,
+    "deliverableType": "schema"
+  },
+  {
+    "capability": "dataset-summary",
+    "serviceId": "REPLACE_WITH_BAD_PROVIDER_SERVICE_ID",
+    "agentId": "REPLACE_WITH_BAD_PROVIDER_AGENT_ID",
+    "priceUsdc": 0.3,
+    "slaSeconds": 60,
+    "deliverableType": "schema"
+  }
+]
