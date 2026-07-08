@@ -3,7 +3,7 @@ import type { Config, Order, Delivery, Negotiation, AcceptNegotiationResult, Pay
 import type { AgentEnv } from "../env.js";
 
 export { EventType, DeliverableType };
-export type { Order, Delivery, Negotiation };
+export type { Order, Delivery, Negotiation, ListOptions };
 
 export type AgentClientFactory = (config: Config, sdkKey: string) => AgentClient;
 
