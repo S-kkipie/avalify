@@ -48,7 +48,7 @@ No fabricated proofs. Settlements are real on-chain CAP transactions with real h
 
 ## Status
 
-🚧 Hackathon build in progress — deadline **2026-07-12**. Design and CAP surface verified; scaffold and the two-run demo landing next. See the [scaffold spec & 6-day roadmap](docs/superpowers/specs/2026-07-06-avalify-scaffold-design.md).
+🚧 Hackathon build in progress — deadline **2026-07-12**. Design, CAP surface, and monorepo scaffold landed (`shared`/`avalify`/`providers`/`harness`, full ranking/verify/aval loop unit-tested against fakes). Next: Dashboard account setup and a real settlement run per the [scaffold spec & 6-day roadmap](docs/superpowers/specs/2026-07-06-avalify-scaffold-design.md).
 
 ## Docs
 
