@@ -1,0 +1,15 @@
+{
+  "name": "@avalify/providers",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/good-provider.js",
+  "scripts": {
+    "build": "tsc -b",
+    "start:good": "tsx src/good-provider.ts",
+    "start:bad": "tsx src/bad-provider.ts"
+  },
+  "dependencies": {
+    "@avalify/shared": "workspace:*"
+  }
+}

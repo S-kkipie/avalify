@@ -1,0 +1,17 @@
+{
+  "name": "@avalify/harness",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/demo.js",
+  "scripts": {
+    "build": "tsc -b",
+    "run:happy": "tsx src/run-happy.ts",
+    "run:adversarial": "tsx src/run-adversarial.ts",
+    "run:demo": "tsx src/demo.ts"
+  },
+  "dependencies": {
+    "@avalify/shared": "workspace:*",
+    "zod": "^3.23.8"
+  }
+}
