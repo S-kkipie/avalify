@@ -26,9 +26,19 @@ export async function hireAvalify(opts: HireAvalifyOptions): Promise<Aval> {
     deliverableType: "schema",
   };
 
+  // Requester.hire() serializes job.input (only) as the CAP negotiation
+  // requirements. Avalify's own service expects the full job request shape
+  // on the wire (agent.ts's decodeJobRequest parses exactly this object),
+  // so that shape has to be nested inside `input` here rather than spread
+  // across JobSpec's top-level fields, which never get transmitted.
   const job: JobSpec = {
     capability: opts.capability,
-    input: opts.input,
+    input: {
+      capability: opts.capability,
+      input: opts.input,
+      maxPriceUsdc: opts.maxPriceUsdc,
+      candidateServiceIds: opts.candidateServiceIds,
+    },
     acceptSchema: z.any(),
     maxPriceUsdc: opts.maxPriceUsdc,
     candidateServiceIds: opts.candidateServiceIds,
